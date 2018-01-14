@@ -20,18 +20,25 @@ wso2::service_name: wso2is_analytics
 wso2::hostname: is.analytics.dev.wso2.org
 wso2::mgt_hostname: is.analytics.dev.wso2.org
 wso2::carbon_home_symlink: "/mnt/wso2is-analytics-%{::product_version}"
-wso2::pack_filename: "%wso2is-analytics-%{::product_version}.zip"
+wso2::pack_filename: "wso2is-analytics-%{::product_version}.zip"
 
 wso2::template_list:
   - repository/conf/datasources/master-datasources.xml
   - repository/conf/datasources/analytics-datasources.xml
   - repository/conf/datasources/metrics-datasources.xml
+  - repository/conf/user-mgt.xml
   - repository/conf/registry.xml
   - repository/conf/metrics.xml
+  - repository/conf/axis2/axis2.xml
+  - repository/conf/carbon.xml
+  - repository/conf/tomcat/catalina-server.xml
   - repository/conf/analytics/analytics-config.xml
+  - repository/conf/analytics/my-node-id.dat
   - repository/conf/analytics/spark/spark-defaults.conf
   - repository/conf/event-processor.xml
   - repository/deployment/server/jaggeryapps/portal/configs/designer.json
+  - bin/load-spark-env-vars.sh
+  - bin/wso2server.sh
 
 #  - repository/conf/security/cipher-text.properties
 #  - repository/conf/security/cipher-tool.properties
@@ -46,7 +53,7 @@ wso2::file_list:
 # Clustering configuration related properties of the product in repository/conf/axis2/axis2.xml
 # Clustering scheme can be wka, aws, kubenetes, mesos
 wso2::clustering:
-  enabled: true
+  enabled: false
   domain: is.analytics.wso2.domain
   local_member_host: "%{::ipaddress}"
   local_member_port: 4000
@@ -166,11 +173,11 @@ wso2::registry_mounts:
 
 wso2::spark:
   master: local
-  master_count: 2
+  master_count: 1
   hostname: "%{::ipaddress}"
 
 wso2::ha_deployment:
-  enabled: true
+  enabled: false
   eventSync:
     hostName: "%{::ipaddress}"
     port: 11224
