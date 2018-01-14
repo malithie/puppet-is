@@ -19,9 +19,9 @@ class wso2is_analytics (
   # wso2is_analytics specific configuration data
   $analytics_datasources  = $wso2is_analytics::params::analytics_datasources,
   $metrics_datasources    = $wso2is_analytics::params::metrics_datasources,
-  $analytics_event_store_datasource = $wso2is::params::analytics_event_store_datasource,
-  $analytics_processed_data_store_datasource = $wso2is::params::analytics_processed_data_store_datasource,
-  $metrics_datasource     = $wso2is::params::metrics_datasource,
+  $analytics_event_store_datasource = $wso2is_analytics::params::analytics_event_store_datasource,
+  $analytics_processed_data_store_datasource = $wso2is_analytics::params::analytics_processed_data_store_datasource,
+  $metrics_datasource     = $wso2is_analytics::params::metrics_datasource,
   $spark                  = $wso2is_analytics::params::spark,
   $ha_deployment          = $wso2is_analytics::params::ha_deployment,
 
@@ -63,8 +63,8 @@ class wso2is_analytics (
 
   # Templated configuration parameters
   $master_datasources     = $wso2is_analytics::params::master_datasources,
-  $registry_instances     = $wso2is::params::registry_instances,
-  $registry_mounts        = $wso2is::params::registry_mounts,
+  $registry_instances     = $wso2is_analytics::params::registry_instances,
+  $registry_mounts        = $wso2is_analytics::params::registry_mounts,
   $hostname               = $wso2is_analytics::params::hostname,
   $mgt_hostname           = $wso2is_analytics::params::mgt_hostname,
   $worker_node            = $wso2is_analytics::params::worker_node,

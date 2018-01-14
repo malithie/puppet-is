@@ -19,13 +19,15 @@ classes:
 wso2::service_name: wso2is_analytics
 wso2::hostname: is.analytics.dev.wso2.org
 wso2::mgt_hostname: is.analytics.dev.wso2.org
-wso2::pack_filename: wso2is-analytics-5.4.0.zip
+wso2::carbon_home_symlink: "/mnt/wso2is-analytics-%{::product_version}"
+wso2::pack_filename: "%wso2is-analytics-%{::product_version}.zip"
 
 wso2::template_list:
   - repository/conf/datasources/master-datasources.xml
   - repository/conf/datasources/analytics-datasources.xml
   - repository/conf/datasources/metrics-datasources.xml
   - repository/conf/registry.xml
+  - repository/conf/metrics.xml
   - repository/conf/analytics/analytics-config.xml
   - repository/conf/analytics/spark/spark-defaults.conf
   - repository/conf/event-processor.xml
