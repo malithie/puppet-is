@@ -19,6 +19,7 @@ classes:
 wso2::service_name: wso2is_analytics
 wso2::hostname: is.analytics.dev.wso2.org
 wso2::mgt_hostname: is.analytics.dev.wso2.org
+wso2::pack_filename: wso2is-analytics-5.4.0.zip
 
 wso2::template_list:
   - repository/conf/datasources/master-datasources.xml
@@ -141,7 +142,7 @@ wso2::metrics_datasource: metrics_ds
 # Remote registry instance configuration related properties in repository/conf/registry.xml
 wso2::registry_instances:
   shared_registry:
-    datasource: identity_ds
+    datasource: analytics_ds
     read_only: false
     registry_root: /
     enable_cache: true

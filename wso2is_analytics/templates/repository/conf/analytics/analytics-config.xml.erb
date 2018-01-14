@@ -23,21 +23,21 @@
    <analytics-record-store name="EVENT_STORE">
       <implementation>org.wso2.carbon.analytics.datasource.rdbms.RDBMSAnalyticsRecordStore</implementation>
       <properties>
-         <property name="datasource"><%= @metrics_datasources[@analytics_event_store_datasource]['name'] %></property>
+         <property name="datasource"><%= @analytics_datasources[@analytics_event_store_datasource]['name'] %></property>
          <property name="category">read_write_optimized</property>
       </properties>
    </analytics-record-store>
    <analytics-record-store name="EVENT_STORE_WO">
       <implementation>org.wso2.carbon.analytics.datasource.rdbms.RDBMSAnalyticsRecordStore</implementation>
       <properties>
-         <property name="datasource"><%= @metrics_datasources[@analytics_event_store_datasource]['name'] %></property>
+         <property name="datasource"><%= @analytics_datasources[@analytics_event_store_datasource]['name'] %></property>
          <property name="category">write_optimized</property>
       </properties>
    </analytics-record-store>
    <analytics-record-store name="PROCESSED_DATA_STORE">
       <implementation>org.wso2.carbon.analytics.datasource.rdbms.RDBMSAnalyticsRecordStore</implementation>
       <properties>
-         <property name="datasource"><%= @metrics_datasources[@analytics_processed_data_store_datasource]['name'] %></property>
+         <property name="datasource"><%= @analytics_datasources[@analytics_processed_data_store_datasource]['name'] %></property>
          <property name="category">read_write_optimized</property>
       </properties>
    </analytics-record-store>
